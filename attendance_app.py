@@ -8,7 +8,7 @@ def call_attendance():
     headers = {'Content-Type': 'application/json; chearset=utf-8'}
     params = {'mac':getmac.get_mac_address(), 'ip':socket.gethostbyname(socket.gethostname())}
     print(f'params = {params}')
-    print(f'address = {host+'/'+cmd}')
+    print(f'address = {host}/{cmd}')
     res = requests.post(host+'/'+cmd, data=json.dumps(params), headers=headers)
 
     print(str(res) + " | " + res.text)
