@@ -4,12 +4,12 @@ import getmac, socket
 
 def call_attendance():
     host = os.getenv('host')
-    cmd = os.getenv('cmd')
+    path = os.getenv('path')
     headers = {'Content-Type': 'application/json; chearset=utf-8'}
     params = {'mac':getmac.get_mac_address(), 'ip':socket.gethostbyname(socket.gethostname())}
     print(f'params = {params}')
-    print(f'address = {host+'/'+cmd}')
-    res = requests.post(host+'/'+cmd, data=json.dumps(params), headers=headers)
+    print(f'address = {host+'/'+path}')
+    res = requests.post(host+'/'+path, data=json.dumps(params), headers=headers)
 
     print(str(res) + " | " + res.text)
 
