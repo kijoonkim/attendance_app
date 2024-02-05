@@ -13,8 +13,7 @@ def call_attendance():
 
     print(str(res) + " | " + res.text)
 
-if __name__ == "__main__":
-    # .env 파일 로드
-    load_dotenv()
-    BASE_DIR = os.getcwd()
-    call_attendance()
+# .env 파일 로드
+load_dotenv()
+BASE_DIR = os.getcwd()
+call_attendance()
